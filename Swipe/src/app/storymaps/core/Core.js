@@ -663,25 +663,28 @@ define(["esri/map",
 					var layerTitle = layer && layer.arcgisProps && layer.arcgisProps.title ? layer.arcgisProps.title : (layer && layer.name ? layer.name : layer);
 					var layers = arcgisUtils.getLegendLayers(response);
 
+					console.log("layerTitle: ", layerTitle);
 					var legend0Layer = $.grep(layers, function(item){
-						return item.title != layerTitle;
+					  return item.title != layerTitle;
 					});
 					
 					var legend1Layer = $.grep(layers, function(item){
-						return item.title == layerTitle;
+					  return item.title == layerTitle;
 					});
 					
 					var legend0 = new Legend({
 							map: app.map,
 							layerInfos: legend0Layer
-						}, "legend0");
+					}, "legend0");
 					legend0.startup();
-					
+
 					var legend1 = new Legend({
 							map: app.map,
 							layerInfos: legend1Layer
-						}, "legend1");
+					}, "legend1");
 					legend1.startup();
+
+					hideEmptyLegend(legend0, legend1);
 				}
 			}
 			
@@ -727,6 +730,21 @@ define(["esri/map",
 			}
 			else if( app.mode == "TWO_LAYERS" )
 				setTimeout(_mainView.webmapLoaded, 0);
+		}
+
+		function hideEmptyLegend(legend0, legend1) {
+		  if (legend0.layers.length == 0) {
+		    $("#legend0").css("display", "none");
+		    $("#legend1").css("width", "100%");
+		    //for some reason this isn't selecting the legend title like I want
+		    $("#legend1 .esriLegendServiceLabel").css("width", "300px");
+		  }
+		  else if (legend1.layers.length == 0) {
+		    $("#legend0").css("width", "100%");
+		    $("#legend1").css("display", "none");
+		    //for some reason this isn't selecting the legend title like I want
+		    $("#legend0 .esriLegendServiceLabel").css("width", "300px");
+		  }
 		}
 
 		function appInitComplete()

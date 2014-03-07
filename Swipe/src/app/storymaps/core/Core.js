@@ -585,7 +585,8 @@ define(["esri/map",
 					slider: divId != "lensMapNode",
 					autoResize: false,
 					infoWindow: app.popup[index],
-					showAttribution: divId != "lensMapNode"
+					showAttribution: divId != "lensMapNode",
+					maxZoom: getMaxZoom()
 				},
 				ignorePopups: false,
 				bingMapsKey: commonConfig.bingMapsKey
@@ -598,6 +599,15 @@ define(["esri/map",
 			return webmapInitCallbackDone;
 		}
 		
+		function getMaxZoom() {
+		  if (configOptions.maximumZoom != undefined && configOptions.maximumZoom > 0) {
+		    return configOptions.maximumZoom;
+		  }
+		  else {
+		    return -1;
+		  }
+		}
+
 		function getWebmapIndex(webmapId)
 		{
 			return $.inArray(webmapId, Helper.getWebmapsIDs(isProd()));
@@ -632,6 +642,7 @@ define(["esri/map",
 								layerInfos: (arcgisUtils.getLegendLayers(response))
 							}, "legend0");
 							legend0.startup();
+							hideEmptyLegend0(legend0);
 						}
 						else {
 							var legend1 = new Legend({
@@ -639,7 +650,8 @@ define(["esri/map",
 								layerInfos: (arcgisUtils.getLegendLayers(response))
 							}, "legend1");
 							legend1.startup();
-						}			
+							hideEmptyLegend1(legend1);
+						}
 				}
 					
 			}
@@ -733,6 +745,9 @@ define(["esri/map",
 		}
 
 		function hideEmptyLegend(legend0, legend1) {
+		  hideEmptyLegend0(legend0);
+		  hideEmptyLegend1(legend1);
+		  /*
 		  if (legend0.layers.length == 0) {
 		    $("#legend0").css("display", "none");
 		    $("#legend1").css("width", "100%");
@@ -740,6 +755,25 @@ define(["esri/map",
 		    $("#legend1 .esriLegendServiceLabel").css("width", "300px");
 		  }
 		  else if (legend1.layers.length == 0) {
+		    $("#legend0").css("width", "100%");
+		    $("#legend1").css("display", "none");
+		    //for some reason this isn't selecting the legend title like I want
+		    $("#legend0 .esriLegendServiceLabel").css("width", "300px");
+		  }
+      */
+		}
+
+		function hideEmptyLegend0(legend0) {
+		  if (legend0.layers.length == 0) {
+		    $("#legend0").css("display", "none");
+		    $("#legend1").css("width", "100%");
+		    //for some reason this isn't selecting the legend title like I want
+		    $("#legend1 .esriLegendServiceLabel").css("width", "300px");
+		  }
+		}
+
+		function hideEmptyLegend1(legend1) {
+		  if (legend1.layers.length == 0) {
 		    $("#legend0").css("width", "100%");
 		    $("#legend1").css("display", "none");
 		    //for some reason this isn't selecting the legend title like I want

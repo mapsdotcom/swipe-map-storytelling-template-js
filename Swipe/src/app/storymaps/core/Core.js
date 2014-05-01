@@ -743,6 +743,11 @@ define(["esri/map",
 				setTimeout(_mainView.webmapLoaded, 0);
 		}
 
+		function zoomToHomeExtent() {
+		  console.log("app.mainMap: ", app.mainMap);
+		  app.mainMap.setExtent(app.mainMap._mapParams.extent);
+		}
+
 		function hideEmptyLegend(legend0, legend1) {
 		  hideEmptyLegend0(legend0);
 		  hideEmptyLegend1(legend1);
@@ -791,6 +796,17 @@ define(["esri/map",
 	
 				);
 			}
+
+		  //Add Zoom Out link to popups
+			var zoomOutLink = dojo.create("a", {
+			  "class": "action",
+			  "id": "zoomOutLink",
+			  "innerHTML": "Zoom out",
+			  "href": "#",
+			  "onclick": "return false;"
+			}, dojo.query(".actionList", app.mainMap.infoWindow.domNode)[0]);
+
+			on(zoomOutLink, "click", zoomToHomeExtent);
 
 			// Resize everything after picture has been set
 			handleWindowResize();

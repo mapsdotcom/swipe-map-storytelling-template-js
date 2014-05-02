@@ -140,22 +140,34 @@
   white-space: nowrap;
   color: white;
   background-color: rgb(68, 68, 68);
-  z-index: 50;
+  z-index: 100;
   font-size: large;
   display: none;
 }
 
-#leftMapTitle {
+#leftMapTitle1 {
 	right: 13px;
   text-align: right;
 }
 
-#rightMapTitle {
+#leftMapTitle2 {
+	right: 7px;
+  text-align: right;
+}
+
+#rightMapTitle1 {
 	left: 13px;
   text-align:left;
 }
 
-#rightMapTitle span, #leftMapTitle span {
+#rightMapTitle2 {
+	right: 0px;
+  text-align: right;
+}
+
+#rightMapTitle1 span, #leftMapTitle1 span,
+#rightMapTitle2 span, #leftMapTitle2 span {
   padding: 4px 6px;
   display: block;
 }
+

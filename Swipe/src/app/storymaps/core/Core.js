@@ -798,15 +798,11 @@ define(["esri/map",
 			}
 
 		  //Add Zoom Out link to popups
-			var zoomOutLink = dojo.create("a", {
-			  "class": "action",
-			  "id": "zoomOutLink",
-			  "innerHTML": "Zoom out",
-			  "href": "#",
-			  "onclick": "return false;"
-			}, dojo.query(".actionList", app.mainMap.infoWindow.domNode)[0]);
+			addZoomOutLink(app.mainMap);
 
-			on(zoomOutLink, "click", zoomToHomeExtent);
+			if (app.mode == "TWO_WEBMAPS") {
+			  addZoomOutLink(app.maps[1]);
+			}
 
 			// Resize everything after picture has been set
 			handleWindowResize();
@@ -837,6 +833,18 @@ define(["esri/map",
 			app.builder && app.builder.appInitComplete();
 		}
 		
+		function addZoomOutLink(webmap) {
+		  var zoomOutLink = dojo.create("a", {
+		    "class": "action",
+		    "id": "zoomOutLink",
+		    "innerHTML": "Zoom out",
+		    "href": "#",
+		    "onclick": "return false;"
+		  }, dojo.query(".actionList", webmap.infoWindow.domNode)[0]);
+
+		  on(zoomOutLink, "click", zoomToHomeExtent);
+		}
+
 		function displayApp()
 		{
 			// If needed make sure that the vertical slider has it's correct height 

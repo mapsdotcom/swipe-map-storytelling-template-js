@@ -136,12 +136,13 @@
 .mapTitle {
   top: 0px;
   position: absolute;
-  /*width: 200px;*/
+  /*min-width: 200px;*/
+  white-space: nowrap;
   color: white;
   background-color: rgb(68, 68, 68);
-  /*background-color: white;
-  border: solid 1px gray;*/
   z-index: 50;
+  font-size: large;
+  display: none;
 }
 
 #leftMapTitle {
@@ -152,4 +153,9 @@
 #rightMapTitle {
 	left: 13px;
   text-align:left;
+}
+
+#rightMapTitle span, #leftMapTitle span {
+  padding: 4px 6px;
+  display: block;
 }

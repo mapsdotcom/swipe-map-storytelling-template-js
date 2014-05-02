@@ -80,6 +80,10 @@
 				series: false,
 				//specify the maximum zoom level (0-20)
 				maximumZoom: 20,
+				//specify titles for the top of the swipe bar - leave blank to leave titles off
+				//you may want to tweak the .mapTitle properties in the MapSwipe.css to adjust for different lengths of titles
+				leftMapTitle: "",
+				rightMapTitle: "",
 				// List of places if series is enabled
 				bookmarks: [
 					/*{
@@ -300,9 +304,11 @@
                     <div id="hoverInfo"></div>
                     <div class="moveable" id="sliderDiv">
                     	<div id="swipeImg"></div>
-											<div id="leftMapTitle" class="mapTitle"></div>
-											<div id="rightMapTitle" class="mapTitle"></div>
-					</div>
+											<!-- Uncomment to add titles to each map -->
+											<div id="leftMapTitle" class="mapTitle"><span></span></div>
+											<div id="rightMapTitle" class="mapTitle"><span></span></div>
+											
+										</div>
                     
                 </div>
 				<div id="swipeImg1"></div>

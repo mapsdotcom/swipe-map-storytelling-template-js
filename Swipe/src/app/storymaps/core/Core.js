@@ -608,6 +608,17 @@ define(["esri/map",
 		  }
 		}
 
+		function placeSwipeBarTitles() {
+		  if (configOptions.leftMapTitle != undefined && configOptions.leftMapTitle != "") {
+		    $("#leftMapTitle span").text(configOptions.leftMapTitle);
+		    $("#leftMapTitle").show();
+		  }
+		  if (configOptions.rightMapTitle != undefined && configOptions.rightMapTitle != "") {
+		    $("#rightMapTitle span").text(configOptions.rightMapTitle);
+		    $("#rightMapTitle").show();
+		  }
+		}
+
 		function getWebmapIndex(webmapId)
 		{
 			return $.inArray(webmapId, Helper.getWebmapsIDs(isProd()));
@@ -711,6 +722,8 @@ define(["esri/map",
 			var appColors = WebApplicationData.getColors();
 			var logoURL = WebApplicationData.getLogoURL() || APPCFG.HEADER_LOGO_URL;
 			var logoTarget = (logoURL == APPCFG.HEADER_LOGO_URL) ? APPCFG.HEADER_LOGO_TARGET : WebApplicationData.getLogoTarget();
+
+			placeSwipeBarTitles();
 
 			app.header.init(
 				! app.isInBuilderMode && (APPCFG.EMBED || urlParams.embed || urlParams.embed === ''),

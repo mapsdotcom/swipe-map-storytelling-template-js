@@ -610,12 +610,24 @@ define(["esri/map",
 
 		function placeSwipeBarTitles() {
 		  if (configOptions.leftMapTitle != undefined && configOptions.leftMapTitle != "") {
-		    $("#leftMapTitle span").text(configOptions.leftMapTitle);
-		    $("#leftMapTitle").show();
+		    if (app.mode == "TWO_WEBMAPS") {
+		      $("#leftMapTitle2 span").text(configOptions.leftMapTitle);
+		      $("#leftMapTitle2").show();
+		    }
+		    else {
+		      $("#leftMapTitle1 span").text(configOptions.leftMapTitle);
+		      $("#leftMapTitle1").show();
+		    }
 		  }
 		  if (configOptions.rightMapTitle != undefined && configOptions.rightMapTitle != "") {
-		    $("#rightMapTitle span").text(configOptions.rightMapTitle);
-		    $("#rightMapTitle").show();
+		    if (app.mode == "TWO_WEBMAPS") {
+		      $("#rightMapTitle2 span").text(configOptions.leftMapTitle);
+		      $("#rightMapTitle2").show();
+		    }
+		    else {
+		      $("#rightMapTitle1 span").text(configOptions.rightMapTitle);
+		      $("#rightMapTitle1").show();
+		    }
 		  }
 		}
 
@@ -723,8 +735,6 @@ define(["esri/map",
 			var logoURL = WebApplicationData.getLogoURL() || APPCFG.HEADER_LOGO_URL;
 			var logoTarget = (logoURL == APPCFG.HEADER_LOGO_URL) ? APPCFG.HEADER_LOGO_TARGET : WebApplicationData.getLogoTarget();
 
-			placeSwipeBarTitles();
-
 			app.header.init(
 				! app.isInBuilderMode && (APPCFG.EMBED || urlParams.embed || urlParams.embed === ''),
 				title,
@@ -816,6 +826,8 @@ define(["esri/map",
 			if (app.mode == "TWO_WEBMAPS") {
 			  addZoomOutLink(app.maps[1]);
 			}
+
+			placeSwipeBarTitles();
 
 			// Resize everything after picture has been set
 			handleWindowResize();

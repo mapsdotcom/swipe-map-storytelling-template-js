@@ -45,7 +45,7 @@
 				// Choose to swipe between two webmaps or between the layer of a single webmap
 				// can be overrided by using webmap= in URL
 				// e.g: ["WEBMAP_ID"] OR ["WEBMAP_ID_1", "WEBMAP_ID_2"]
-				webmaps: ["62702544d70648e593bc05d65180fd64"],
+				webmaps: ["5ac26b1276d9468f9bf80d6f5b2ae150", "d076bd4b4b524f0b9c9bdaa7953f616e"],
 				// If using one webmap, enter the layer index of the layer to be revealed. 
 				// Index is defined by the web map table of contents (0 is the top layer).
 				layerIndex: 1, 
@@ -56,7 +56,7 @@
 				// Pop-up
 				//----------------------------------
 				// Web map popups can be disabled in the application when set to false
-				popup: true,
+				popup: false,
 				// Text that appears in pop-up header to help user associate pop-up with the correct map.
 				// First string will be used for the right map or spyglass map, and the second string is used for the right map or main map in spyglass mode
 				popupTitles: ["", ""],  //["right", "left"]
@@ -68,7 +68,7 @@
 				// Dictate if the legend panel is displayed in the side panel.
 				legend: true,
 				// Dictate if the description panel is displayed in the side panel.
-				description: true,
+				description: false,
 				// Text that appears in the description panel of the side panel. Valid HTML string expected.
 				sidePanelDescription: "A longer description can be displayed here",
 				// Address location search widget
@@ -119,9 +119,9 @@
 				// Header
 				//----------------------------------
 				// The application header title, if no title is specified, the webmap's title is used
-				title: "",
+				title: "Mechanicsburg, Pennsylvania",
 				// The application header subtitle, if not specified the ArcGIS.com web map's summary is used
-				subtitle: ""
+				subtitle: "Move the swipe bar to see how different zoning districts look from a satellite view."
 			};
 			// Optionally sharing and proxy URLs can be configured in app/swipe-config.js. This is only required  
 			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the template isn't deployed as /home/StorytellingSwipe/ or /apps/StorytellingSwipe/. 

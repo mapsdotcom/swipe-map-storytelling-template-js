@@ -621,7 +621,7 @@ define(["esri/map",
 		  }
 		  if (configOptions.rightMapTitle != undefined && configOptions.rightMapTitle != "") {
 		    if (app.mode == "TWO_WEBMAPS") {
-		      $("#rightMapTitle2 span").text(configOptions.leftMapTitle);
+		      $("#rightMapTitle2 span").text(configOptions.rightMapTitle);
 		      $("#rightMapTitle2").show();
 		    }
 		    else {

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>Interstate Highway System and Population Density of the United States</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 		
@@ -45,7 +45,7 @@
 				// Choose to swipe between two webmaps or between the layer of a single webmap
 				// can be overrided by using webmap= in URL
 				// e.g: ["WEBMAP_ID"] OR ["WEBMAP_ID_1", "WEBMAP_ID_2"]
-				webmaps: ["62702544d70648e593bc05d65180fd64"],
+				webmaps: ["5178a81862c94ce8aea098f47287e884", "073614bb590548228c71aaca2b4cd57a"],
 				// If using one webmap, enter the layer index of the layer to be revealed. 
 				// Index is defined by the web map table of contents (0 is the top layer).
 				layerIndex: 1, 
@@ -56,7 +56,7 @@
 				// Pop-up
 				//----------------------------------
 				// Web map popups can be disabled in the application when set to false
-				popup: true,
+				popup: false,
 				// Text that appears in pop-up header to help user associate pop-up with the correct map.
 				// First string will be used for the right map or spyglass map, and the second string is used for the right map or main map in spyglass mode
 				popupTitles: ["", ""],  //["right", "left"]
@@ -70,7 +70,7 @@
 				// Dictate if the description panel is displayed in the side panel.
 				description: true,
 				// Text that appears in the description panel of the side panel. Valid HTML string expected.
-				sidePanelDescription: "A longer description can be displayed here",
+				sidePanelDescription: '<b>U.S. Interstate Highway System</b> <br/>The Federal-Aid Highway Act of 1944 called for a National System of Interstate Highways, to include up to 40,000 miles "... so located, as to connect by routes, direct as practical, the principal metropolitan areas, cities, and industrial centers, to serve the National Defense, and to connect at suitable points, routes of continental importance in the Dominion of Canada and the Republic of Mexico." The Federal-Aid Highway Act of 1956 authorized and funded the program but changed the name to the National System of Interstate and Defense Highways.',
 				// Address location search widget
 				locationSearch: false,
 				// Location button that locates user (on supported browsers)
@@ -79,11 +79,11 @@
 				// extents with appropriate titles and descriptions.
 				series: false,
 				//specify the maximum zoom level (0-20)
-				maximumZoom: 20,
+				maximumZoom: 8,
 				//specify titles for the top of the swipe bar - leave blank to leave titles off
 				//you may want to tweak the .mapTitle properties in the MapSwipe.css to adjust for different lengths of titles
-				leftMapTitle: "",
-				rightMapTitle: "",
+				leftMapTitle: "2010 Population Density",
+				rightMapTitle: "1950  Population Density",
 				// List of places if series is enabled
 				bookmarks: [
 					/*{
@@ -119,9 +119,9 @@
 				// Header
 				//----------------------------------
 				// The application header title, if no title is specified, the webmap's title is used
-				title: "",
+				title: "Interstate Highway System and Population Density of the United States",
 				// The application header subtitle, if not specified the ArcGIS.com web map's summary is used
-				subtitle: ""
+				subtitle: "Move the swipe bar to see the current U.S. Interstate Highway System and the population density in 1950, before Congress funded the construction of the Interstate Highway System."
 			};
 			// Optionally sharing and proxy URLs can be configured in app/swipe-config.js. This is only required  
 			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the template isn't deployed as /home/StorytellingSwipe/ or /apps/StorytellingSwipe/. 

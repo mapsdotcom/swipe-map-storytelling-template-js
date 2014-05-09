@@ -163,6 +163,7 @@
 #rightMapTitle2 {
 	right: 0px;
   text-align: right;
+  z-index: 50;
 }
 
 #rightMapTitle1 span, #leftMapTitle1 span,

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>2015 Washington State Legislative Districts and Population Density</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 		
@@ -20,7 +20,7 @@
 
 		<!-- Facebook sharing -->
 		<meta property="og:title" content="Swipe"/>
-		<meta property="og:description" content="This story map was created with the Esri Swipe application in ArcGIS Online."/>
+		<meta property="og:description" content="2015 Washington State Legislative Districts and Population Density."/>
 		<meta property="og:image" content="resources/icons/esri-globe.png"/>
 
 		<!-- 
@@ -45,10 +45,10 @@
 				// Choose to swipe between two webmaps or between the layer of a single webmap
 				// can be overrided by using webmap= in URL
 				// e.g: ["WEBMAP_ID"] OR ["WEBMAP_ID_1", "WEBMAP_ID_2"]
-				webmaps: ["62702544d70648e593bc05d65180fd64"],
+				webmaps: ["9293c77b85ba47ceb85e6f7812d53c81", "cf486a987faa4d91b57be054fdad5a1c"],
 				// If using one webmap, enter the layer index of the layer to be revealed. 
 				// Index is defined by the web map table of contents (0 is the top layer).
-				layerIndex: 1, 
+				layerIndex: 2, 
 				// Alternatively you can also reuse a web application ID created through the interactive builder in ArcGIS.com 
 				// This allow to reuse the settings like the header configuration without having to edit any configuration here
 				appid: "",
@@ -59,16 +59,16 @@
 				popup: true,
 				// Text that appears in pop-up header to help user associate pop-up with the correct map.
 				// First string will be used for the right map or spyglass map, and the second string is used for the right map or main map in spyglass mode
-				popupTitles: ["", ""],  //["right", "left"]
+				popupTitles: ["Population Density", "Washington State Legislative Districts"],  //["right", "left"]
 				// Popup colors that will be the background colors for the popup header. Same order as popupTitles. Use hex values.
-				popupColors: ["6cb7ff", "ff5858"], // ["right color hex", "left color hex"] gray=808080
+				popupColors: ["ff5858", "6cb7ff"], // ["right color hex", "left color hex"] gray=808080
 				//----------------------------------
 				// App Layout
 				//----------------------------------
 				// Dictate if the legend panel is displayed in the side panel.
 				legend: true,
 				// Dictate if the description panel is displayed in the side panel.
-				description: true,
+				description: false,
 				// Text that appears in the description panel of the side panel. Valid HTML string expected.
 				sidePanelDescription: "A longer description can be displayed here",
 				// Address location search widget
@@ -79,11 +79,11 @@
 				// extents with appropriate titles and descriptions.
 				series: false,
 				//specify the maximum zoom level (0-20)
-				maximumZoom: 20,
+				maximumZoom: 10,
 				//specify titles for the top of the swipe bar - leave blank to leave titles off
 				//you may want to tweak the .mapTitle properties in the MapSwipe.css to adjust for different lengths of titles
-				leftMapTitle: "",
-				rightMapTitle: "",
+				leftMapTitle: "Legislative Districts",
+				rightMapTitle: "Population Density",
 				// List of places if series is enabled
 				bookmarks: [
 					/*{
@@ -119,9 +119,9 @@
 				// Header
 				//----------------------------------
 				// The application header title, if no title is specified, the webmap's title is used
-				title: "",
+				title: "Washington State Legislative Districts and Population Density",
 				// The application header subtitle, if not specified the ArcGIS.com web map's summary is used
-				subtitle: ""
+				subtitle: "Washington State 2015 Legislative Districts and Population Density by Census Tract &nbsp;&nbsp;(US population density is 88.8)<br/>Swipe the bar across to see how congressional districts correspond to population density."
 			};
 			// Optionally sharing and proxy URLs can be configured in app/swipe-config.js. This is only required  
 			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the template isn't deployed as /home/StorytellingSwipe/ or /apps/StorytellingSwipe/. 
@@ -272,7 +272,7 @@
 					</div>
 					<div class="logo">
 						<a target="_blank">
-							<img alt="Esri - Home" />
+							<img alt="Home" />
 						</a>
 					</div>
 				</div>

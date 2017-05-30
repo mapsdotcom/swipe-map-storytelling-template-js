@@ -8,8 +8,8 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
-		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
+		<link type="image/ico" rel="shortcut icon" href="resources/icons/maps_logo_M_small.png">
+		<link type="image/ico" rel="icon"  href="resources/icons/maps_logo_M_small.png">
 
 		<!-- 
 			To correctly reference your application in search engine:
@@ -20,8 +20,8 @@
 
 		<!-- Facebook sharing -->
 		<meta property="og:title" content="Swipe"/>
-		<meta property="og:description" content="This story map was created with the Esri Swipe application in ArcGIS Online."/>
-		<meta property="og:image" content="resources/icons/esri-globe.png"/>
+		<meta property="og:description" content="A story map."/>
+		<meta property="og:image" content="resources/icons/maps_logo_M_small"/>
 
 		<!-- 
 			This template is released under the Apache License V2.0 by Esri http://www.esri.com/
@@ -820,19 +820,15 @@
 			}
 		</script>
 
-		<!-- Enable Google Analytics on http://storymaps.esri.com/ -->
-		<script type="text/javascript">
-			if (window.location.href.toLowerCase().indexOf("storymaps.esri.com") >= 0) {
-				var _gaq = _gaq || [];
-				_gaq.push(['_setAccount', 'UA-26529417-1']);
-				_gaq.push(['_trackPageview']);
+		<!-- Enable Google Analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-				(function() {
-					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-				})();
-			}
+		  ga('create', 'UA-75617420-2', 'auto', 'mhe-government');
+		  ga('send', 'pageview');
 		</script>
 
 		<script type="text/javascript">

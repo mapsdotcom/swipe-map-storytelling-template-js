@@ -8,17 +8,17 @@ APPCFG = {
 	EMBED: false,
 	
 	// Header Logo
-	HEADER_LOGO_URL: "resources/icons/esri-logo.png",
-	HEADER_LOGO_TARGET: "http://www.esri.com",
+	HEADER_LOGO_URL: "",
+	HEADER_LOGO_TARGET: "",
 	// Header top right link
-	HEADER_LINK_TEXT: "A story map",
-	HEADER_LINK_URL: "http://storymaps.arcgis.com/",
+	HEADER_LINK_TEXT: "",
+	HEADER_LINK_URL: "",
 	// Control display of Facebook and Twitter links
 	HEADER_SOCIAL: {
-		facebook: true,
-		twitter: true,
+		facebook: false,
+		twitter: false,
 		bitly: {
-			enable: true,
+			enable: false,
 			login: "esristorymaps",
 			key: "R_14fc9f92e48f7c78c21db32bd01f7014"
 		}
